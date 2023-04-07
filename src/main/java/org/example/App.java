@@ -16,7 +16,7 @@ public class App {
         server.createContext("/health", new HealthHandler());
         server.setExecutor(null);
         server.start();
-
+        System.out.println("Server start");
     }
 }
 class HealthHandler implements HttpHandler {
