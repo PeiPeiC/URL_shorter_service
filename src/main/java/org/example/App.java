@@ -2,8 +2,6 @@ package org.example;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 
-import com.sun.net.httpserver.HttpExchange;
-import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 import org.example.handler.HelloHandler;
 import org.example.handler.HealthHandler;
