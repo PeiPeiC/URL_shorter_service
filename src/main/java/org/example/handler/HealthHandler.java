@@ -6,6 +6,7 @@ import java.io.IOException;
 
 public class HealthHandler implements HttpHandler {
 
+    @Override
     public void handle(HttpExchange exchange) throws IOException {
         /**
          * the "response" string is created as a JSON message with a "status" field set to "OK" because the HTTP response is intended to be consumed by a client application, and JSON is a commonly used data format for transmitting data between web applications and client applications.
