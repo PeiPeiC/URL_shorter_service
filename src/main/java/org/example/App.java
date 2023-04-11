@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.InetSocketAddress;
 import org.example.handler.HealthHandler;
 import org.example.handler.HelloHandler;
+import org.example.handler.ShortenUrlHandler;
 
 /**
  * Hello world!
@@ -18,6 +19,7 @@ public class App {
          */
         server.createContext("/health", new HealthHandler());
         server.createContext("/hello", new HelloHandler());
+        server.createContext("/url-service/shorten", new ShortenUrlHandler());
         /**
          * Setting the executor to null effectively disables any additional thread management and uses the default thread pool provided by the HttpServer
          */
