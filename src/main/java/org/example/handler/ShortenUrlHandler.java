@@ -17,7 +17,7 @@ import java.sql.SQLException;
 
 public class ShortenUrlHandler implements HttpHandler {
 
-    private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/url_shortener_service";
+    private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/url_shorter_service";
     private static final String DATABASE_USERNAME = "root";
     private static final String DATABASE_PASSWORD = "password";
     private static final String LONG_URL_COLUMN_NAME = "long_url";
