@@ -2,8 +2,8 @@ package org.example.handler;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
-import org.example.until.DatabaseConnection;
-import org.example.until.UniqueIDGenerator;
+import org.example.util.DatabaseConnection;
+import org.example.util.UniqueIDGenerator;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -38,8 +38,7 @@ public class ShortenUrlHandler implements HttpHandler {
         String shortUrl = getShortUrlFromDatabase(longUrl);
         if (shortUrl == null) {
             // Generate a unique short code using the UniqueIDGenerator class
-            String shortCode = UniqueIDGenerator.generateUniqueID();
-            shortUrl = SHORT_URL_PREFIX + shortCode;
+            shortUrl = UniqueIDGenerator.generateUniqueID();
 
             // Insert the new short URL into the database
             insertShortUrlIntoDatabase(longUrl, shortUrl);
@@ -47,7 +46,7 @@ public class ShortenUrlHandler implements HttpHandler {
 
         // Create the response
         JSONObject response = new JSONObject();
-        response.put("shortUrl", shortUrl);
+        response.put("shortUrl", SHORT_URL_PREFIX + shortUrl);
 
         // Set the response headers
         exchange.getResponseHeaders().set("Content-Type", "application/json");
