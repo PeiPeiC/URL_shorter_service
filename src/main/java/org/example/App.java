@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import org.example.handler.HealthHandler;
 import org.example.handler.HelloHandler;
 import org.example.handler.ShortenUrlHandler;
+import org.example.handler.UrlRedirectHandler;
 import org.example.util.DatabaseConnection;
 
 /**
@@ -26,14 +27,16 @@ public class App {
         HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
 
         // Create handlers
-        HealthHandler healthHandler = new HealthHandler();
-        HelloHandler helloHandler = new HelloHandler();
+//        HealthHandler healthHandler = new HealthHandler();
+//        HelloHandler helloHandler = new HelloHandler();
         ShortenUrlHandler shortenUrlHandler = new ShortenUrlHandler();
+        UrlRedirectHandler urlRedirectHandler = new UrlRedirectHandler();
 
         // Register handlers
-        server.createContext("/health", healthHandler);
-        server.createContext("/hello", helloHandler);
+//        server.createContext("/health", healthHandler);
+//        server.createContext("/hello", helloHandler);
         server.createContext("/shorten", shortenUrlHandler);
+        server.createContext("/", urlRedirectHandler);
 
         // Start the server
         server.setExecutor(null);
