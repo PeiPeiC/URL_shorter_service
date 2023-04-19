@@ -12,7 +12,7 @@ public class DatabaseConnection {
     public static final String DATABASE_USERNAME = "root";
     public static final String DATABASE_PASSWORD = "password";
     public static final String LONG_URL_COLUMN = "long_url";
-    public static final String SHORT_CODE_COLUMN = "short_code";
+    public static final String SHORT_CODE_COLUMN = "short_url";
 
 
     public static Connection getConnection() throws SQLException {
